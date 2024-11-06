@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.26)
 
-project(AIMSoftware CXX C)
+project(optional-crash CXX C)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
