@@ -1,0 +1,39 @@
+{
+  "version": 6,
+  "configurePresets": [
+  {
+    "name": "windows-base",
+    "description": "Target Windows with the Visual Studio development environment.",
+    "hidden": true,
+    "generator": "Ninja",
+    "architecture": {
+      "value": "x64",
+      "strategy": "external"
+    },
+    "binaryDir": "${sourceDir}/Software/x64/${presetName}",
+    "condition": {
+      "type": "equals",
+      "lhs": "${hostSystemName}",
+      "rhs": "Windows"
+    }
+  },
+  {
+    "name": "clang-base",
+    "description": "Target Windows with the clang compiler",
+    "hidden": true,
+    "inherits": "windows-base",
+    "cacheVariables": {
+      "CMAKE_C_COMPILER": "clang.exe",
+      "CMAKE_CXX_COMPILER": "clang++.exe"
+    }
+  },
+  {
+    "name": "Clang-Debug",
+    "displayName": "Clang-Debug",
+    "description": "Target Windows (64-bit) with the Clang development environment. (Debug)",
+    "inherits": "clang-base",
+    "cacheVariables": {
+      "CMAKE_BUILD_TYPE": "Debug"
+    }
+  }]
+}
